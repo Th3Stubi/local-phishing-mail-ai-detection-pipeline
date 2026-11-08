@@ -1,0 +1,7 @@
+From: Sender <sender@example.com>
+To: Recipient <recipient@example.com>
+Subject: Test nodate
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+
+No date header.

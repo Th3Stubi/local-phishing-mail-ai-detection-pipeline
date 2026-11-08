@@ -1,0 +1,17 @@
+# Project settings. Paths are relative to the folder of this file.
+
+model:
+  # Placeholder. The real model name is decided later and is never hard-coded.
+  name: "PLACEHOLDER_MODEL_NAME"
+
+# Placeholder value, not decided yet.
+seed: 42
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  metadata: data/processed/metadata.csv
+
+# Keep only emails with a Date header before this day (UTC).
+date_cutoff: "2022-12-01"

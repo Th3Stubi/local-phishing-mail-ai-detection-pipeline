@@ -1,0 +1,8 @@
+From: Sender <sender@example.com>
+To: Recipient <recipient@example.com>
+Subject: Test two
+Date: Mon, 05 Nov 2018 08:30:00 +0100
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+
+Second test message.

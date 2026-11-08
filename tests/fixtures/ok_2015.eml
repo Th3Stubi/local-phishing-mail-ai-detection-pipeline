@@ -1,0 +1,8 @@
+From: Sender <sender@example.com>
+To: Recipient <recipient@example.com>
+Subject: Test one
+Date: Tue, 03 Mar 2015 10:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+
+Hello, this is a test message. Visit http://example.com/test

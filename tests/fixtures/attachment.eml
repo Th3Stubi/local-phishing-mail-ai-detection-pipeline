@@ -1,0 +1,18 @@
+From: Sender <sender@example.com>
+To: Recipient <recipient@example.com>
+Subject: Test attachment
+Date: Fri, 06 Jun 2014 12:00:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: text/plain; charset=us-ascii
+
+Please see the file.
+--BOUNDARY
+Content-Type: application/octet-stream; name="file.bin"
+Content-Disposition: attachment; filename="file.bin"
+Content-Transfer-Encoding: base64
+
+U0VDUkVUQVRUQUNITUVOVA==
+--BOUNDARY--

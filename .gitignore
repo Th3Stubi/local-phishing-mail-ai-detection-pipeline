@@ -1,0 +1,22 @@
+# Raw and derived data never go into Git
+data/raw/
+data/interim/
+data/processed/
+!data/README.md
+
+# Local open items
+CLAUDE.local.md
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
