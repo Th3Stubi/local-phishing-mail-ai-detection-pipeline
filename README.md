@@ -38,12 +38,21 @@ The data is **not** stored in this repo. It only contains scripts, configuration
 ## Setup (rough steps)
 Requirements: Python, [Ollama](https://ollama.com/download), an NVIDIA GPU with 6 GB VRAM (tested with GTX 1660 Ti on Windows).
 
-1. Clone the repo, create a virtual environment and install the dependencies (file follows: **open**)
+1. Clone the repo, create a virtual environment and install the dependencies: `pip install -e .[dev]` (defined in `pyproject.toml`)
 2. Download the model: `ollama pull gemma4:e4b`
 3. Download and check the raw data (script follows: **open**)
 4. Start the pipeline (command follows: **open**)
 
 The model name is set in `config.yaml`. The model itself is not part of the repo.
+
+## Parse emails
+Put an mbox file or a folder with `.eml` files somewhere locally (for example in `data/raw/`) and run:
+
+```
+python -m phishpipe.parser data/raw/<file-or-folder>
+```
+
+Cleaned emails go to `data/interim/`, the metadata table to `data/processed/metadata.csv`. Run the tests with `pytest`. Details: [docs/parser.md](docs/parser.md).
 
 See [docs/concept.md](docs/concept.md) for the full concept.
 
