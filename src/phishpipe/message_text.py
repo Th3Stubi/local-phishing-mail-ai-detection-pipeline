@@ -41,7 +41,7 @@ def get_plain_text(msg: Message) -> str | None:
         return None
     charset = part.get_content_charset() or "us-ascii"
     try:
-        return raw.decode(charset, errors="replace ")
+        return raw.decode(charset, errors="replace")
     except LookupError:  # unknown charset name
         return raw.decode("utf-8", errors="replace")
 
