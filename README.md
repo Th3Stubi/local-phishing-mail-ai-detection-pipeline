@@ -22,6 +22,8 @@ Real phishing emails from before modern LLMs are read in. **Headers and links st
 Not part of this repo: the comparison of detection methods and the answer to the research question (planned for the bachelor thesis). Also out of scope: attachments and images, gateway integration, cloud services.
 
 ## Pipeline overview
+Details and the result after each step: [docs/pipeline.md](docs/pipeline.md).
+
 1. Download raw data (mbox/eml) locally and check hashes
 2. Parse, clean, remove duplicates (one `.eml` per email)
 3. Replace URLs with placeholders, rewrite the text with a local LLM (Q1, Q2, optional Q3), put the URLs back
