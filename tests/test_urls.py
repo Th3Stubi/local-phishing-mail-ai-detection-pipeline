@@ -66,3 +66,52 @@ def test_unknown_placeholder_is_left_alone():
     assert unmask_urls("{{URL_1}} and {{URL_5}}", ["http://example.com"]) == (
         "http://example.com and {{URL_5}}"
     )
+
+
+REALISTIC_BODY = """Dear customer,
+
+We noticed a problem with your account. Please log in at
+https://secure.example.com/login?id=123&ref=mail to confirm your details.
+
+If the link does not work, copy this address into your browser: www.example.org/verify,
+or open <http://example.net/help> instead.
+
+Questions? Write to support@example.com (we answer within 24 hours).
+See our terms (https://example.com/terms) and visit
+https://secure.example.com/login?id=123&ref=mail again.
+
+Thank you,
+The Example Team
+"""
+
+REALISTIC_MASKED = """Dear customer,
+
+We noticed a problem with your account. Please log in at
+{{URL_1}} to confirm your details.
+
+If the link does not work, copy this address into your browser: {{URL_2}},
+or open <{{URL_3}}> instead.
+
+Questions? Write to support@example.com (we answer within 24 hours).
+See our terms ({{URL_4}}) and visit
+{{URL_5}} again.
+
+Thank you,
+The Example Team
+"""
+
+
+def test_realistic_mail_body():
+    masked, urls = mask_urls(REALISTIC_BODY)
+    assert masked == REALISTIC_MASKED
+    assert urls == [
+        "https://secure.example.com/login?id=123&ref=mail",
+        "www.example.org/verify",
+        "http://example.net/help",
+        "https://example.com/terms",
+        "https://secure.example.com/login?id=123&ref=mail",
+    ]
+    # the email address is not a URL and stays in the text
+    assert "support@example.com" in masked
+    # putting the URLs back gives exactly the original text
+    assert unmask_urls(masked, urls) == REALISTIC_BODY
