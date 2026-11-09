@@ -38,7 +38,7 @@ The data is **not** stored in this repo. It only contains scripts, configuration
 - Origin and license of the original emails must be checked before any dataset is published. The generated emails are used locally for research only and are never sent.
 
 ## Setup (rough steps)
-Requirements: Python, [Ollama](https://ollama.com/download), an NVIDIA GPU with 6 GB VRAM (tested with GTX 1660 Ti on Windows).
+Requirements:Python, [Ollama](https://ollama.com/download), a GPU with at least 6 GB VRAM.
 
 1. Clone the repo, create a virtual environment and install the dependencies: `pip install -e .[dev]` (defined in `pyproject.toml`)
 2. Download the model: `ollama pull gemma4:e4b`
